@@ -84,7 +84,7 @@ export default function ClientQR() {
 
   return (
     <div className="">
-      <h2>Client QR code styling for Next.js</h2>
+      {/* <h2>Client QR code styling for Next.js</h2> */}
       <div ref={ref} />
       <div className="">
         <input value={options.data} onChange={onDataChange} className="" />
@@ -109,3 +109,4 @@ export default function ClientQR() {
     </div>
   );
 }
+/* bars-arrow-down */

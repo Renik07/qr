@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@tailwind utilities;
 
 @custom-variant dark (&:is(.dark *));
 
@@ -127,3 +128,11 @@
 .container {
 	@apply max-w-7xl mx-auto w-full px-4
 }
+
+.tab-title {
+	@apply cursor-pointer text-lg
+}
+
+/* .tab-select-title {
+	@apply cursor-pointer text-foreground text-lg
+} */
