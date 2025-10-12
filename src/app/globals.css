@@ -133,6 +133,18 @@
 	@apply cursor-pointer text-lg
 }
 
+.accordion-title {
+	@apply text-xl cursor-pointer
+}
+
+.input-title {
+	@apply text-[16px]
+}
+
+.input {
+	@apply text-[18px] py-5
+}
+
 /* .tab-select-title {
 	@apply cursor-pointer text-foreground text-lg
 } */
