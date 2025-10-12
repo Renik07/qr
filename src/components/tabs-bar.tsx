@@ -41,6 +41,7 @@ import {
   Wifi,
 } from "lucide-react";
 import { Textarea } from "./ui/textarea";
+import { QrOptions } from "./qr-options";
 
 export default function TabsBar() {
   const [activeTab, setActiveTab] = useState("url");
@@ -146,260 +147,263 @@ export default function TabsBar() {
         </TabsList>
 
         <div className="flex flex-col gap-x-4 md:flex-row">
-          <div className="w-full">
-            {/* URL */}
-            <TabsContent value="url">
-              <Card>
-                <CardHeader>
-                  <CardTitle>URL</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid gap-3">
-                    <Label className="text-lg" htmlFor="url">
-                      Enter your URL
-                    </Label>
-                    <Input
+          <div className="w-full flex flex-col gap-4">
+            <div>
+              {/* URL */}
+              <TabsContent value="url">
+                <Card>
+                  <CardHeader>
+                    <CardTitle>URL</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid gap-3">
+                      <Label className="text-lg" htmlFor="url">
+                        Enter your URL
+                      </Label>
+                      <Input
+                        className="md:text-xl"
+                        id="url"
+                        placeholder="https://example.com"
+                      />
+                    </div>
+                  </CardContent>
+                </Card>
+              </TabsContent>
+              {/* PHONE */}
+              <TabsContent value="phone">
+                <Card>
+                  <CardHeader>
+                    <CardTitle>PHONE</CardTitle>
+                  </CardHeader>
+                  <CardContent></CardContent>
+                </Card>
+              </TabsContent>
+              {/* SMS */}
+              {/* TEXT */}
+              <TabsContent value="text">
+                <Card>
+                  <CardHeader>
+                    <CardTitle>TEXT</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <Textarea
                       className="md:text-xl"
-                      id="url"
-                      placeholder="https://example.com"
+                      placeholder="Type your text here"
                     />
-                  </div>
-                </CardContent>
-              </Card>
-            </TabsContent>
-            {/* PHONE */}
-            <TabsContent value="phone">
-              <Card>
-                <CardHeader>
-                  <CardTitle>PHONE</CardTitle>
-                </CardHeader>
-                <CardContent></CardContent>
-              </Card>
-            </TabsContent>
-            {/* SMS */}
-            {/* TEXT */}
-            <TabsContent value="text">
-              <Card>
-                <CardHeader>
-                  <CardTitle>TEXT</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <Textarea
-                    className="md:text-xl"
-                    placeholder="Type your text here"
-                  />
-                </CardContent>
-              </Card>
-            </TabsContent>
-            {/* SMS */}
-            <TabsContent value="sms">
-              <Card>
-                <CardHeader>
-                  <CardTitle>SMS</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <Textarea
-                    className="md:text-xl"
-                    placeholder="Type your text here"
-                  />
-                </CardContent>
-              </Card>
-            </TabsContent>
-            {/* EMAIL */}
-            <TabsContent value="email">
-              <Card>
-                <CardHeader>
-                  <CardTitle>E-mail</CardTitle>
-                  <CardDescription>E-mail text</CardDescription>
-                </CardHeader>
-                <CardContent>E-mail content</CardContent>
-              </Card>
-            </TabsContent>
-            {/* VCARD */}
-            <TabsContent value="vcard">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Vcard</CardTitle>
-                  <CardDescription>Vcard</CardDescription>
-                </CardHeader>
-                <CardContent>Vcard</CardContent>
-              </Card>
-            </TabsContent>
-            {/* WIFI */}
-            <TabsContent value="wifi">
-              <Card>
-                <CardHeader>
-                  <CardTitle>WIFI</CardTitle>
-                  <CardDescription>WIFI</CardDescription>
-                </CardHeader>
-                <CardContent>WIFI</CardContent>
-              </Card>
-            </TabsContent>
-            {/* EVENT */}
-            <TabsContent value="event">
-              <Card>
-                <CardHeader>
-                  <CardTitle>EVENT</CardTitle>
-                  <CardDescription>event description</CardDescription>
-                </CardHeader>
-                <CardContent>Event</CardContent>
-              </Card>
-            </TabsContent>
-            {/* LOCATION */}
-            <TabsContent value="location">
-              <Card>
-                <CardHeader>
-                  <CardTitle>LOCATION</CardTitle>
-                  <CardDescription>location description</CardDescription>
-                </CardHeader>
-                <CardContent>Location</CardContent>
-              </Card>
-            </TabsContent>
+                  </CardContent>
+                </Card>
+              </TabsContent>
+              {/* SMS */}
+              <TabsContent value="sms">
+                <Card>
+                  <CardHeader>
+                    <CardTitle>SMS</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <Textarea
+                      className="md:text-xl"
+                      placeholder="Type your text here"
+                    />
+                  </CardContent>
+                </Card>
+              </TabsContent>
+              {/* EMAIL */}
+              <TabsContent value="email">
+                <Card>
+                  <CardHeader>
+                    <CardTitle>E-mail</CardTitle>
+                    <CardDescription>E-mail text</CardDescription>
+                  </CardHeader>
+                  <CardContent>E-mail content</CardContent>
+                </Card>
+              </TabsContent>
+              {/* VCARD */}
+              <TabsContent value="vcard">
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Vcard</CardTitle>
+                    <CardDescription>Vcard</CardDescription>
+                  </CardHeader>
+                  <CardContent>Vcard</CardContent>
+                </Card>
+              </TabsContent>
+              {/* WIFI */}
+              <TabsContent value="wifi">
+                <Card>
+                  <CardHeader>
+                    <CardTitle>WIFI</CardTitle>
+                    <CardDescription>WIFI</CardDescription>
+                  </CardHeader>
+                  <CardContent>WIFI</CardContent>
+                </Card>
+              </TabsContent>
+              {/* EVENT */}
+              <TabsContent value="event">
+                <Card>
+                  <CardHeader>
+                    <CardTitle>EVENT</CardTitle>
+                    <CardDescription>event description</CardDescription>
+                  </CardHeader>
+                  <CardContent>Event</CardContent>
+                </Card>
+              </TabsContent>
+              {/* LOCATION */}
+              <TabsContent value="location">
+                <Card>
+                  <CardHeader>
+                    <CardTitle>LOCATION</CardTitle>
+                    <CardDescription>location description</CardDescription>
+                  </CardHeader>
+                  <CardContent>Location</CardContent>
+                </Card>
+              </TabsContent>
 
-            {/* CRYPTO */}
-            <TabsContent value="crypto">
-              <Card>
-                <CardHeader>
-                  <CardTitle>crypto</CardTitle>
-                  <CardDescription>crypto</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid gap-3">
-                    <Label htmlFor="facebook">crypto</Label>
-                    <Input
-                      id="facebook"
-                      placeholder="https://facebook.com/username"
-                    />
-                  </div>
-                </CardContent>
-              </Card>
-            </TabsContent>
+              {/* CRYPTO */}
+              <TabsContent value="crypto">
+                <Card>
+                  <CardHeader>
+                    <CardTitle>crypto</CardTitle>
+                    <CardDescription>crypto</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid gap-3">
+                      <Label htmlFor="facebook">crypto</Label>
+                      <Input
+                        id="facebook"
+                        placeholder="https://facebook.com/username"
+                      />
+                    </div>
+                  </CardContent>
+                </Card>
+              </TabsContent>
 
-            {/* Files Content */}
-            <TabsContent value="file">
-              <Card>
-                <CardHeader>
-                  <CardTitle>PDF, Excel, Word etc. Document</CardTitle>
-                  <CardDescription>Upload a PDF file</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid gap-3">
-                    <Label htmlFor="pdf">Upload PDF</Label>
-                    <Input id="pdf" type="file" accept=".pdf" />
-                  </div>
-                </CardContent>
-              </Card>
-            </TabsContent>
+              {/* Files Content */}
+              <TabsContent value="file">
+                <Card>
+                  <CardHeader>
+                    <CardTitle>PDF, Excel, Word etc. Document</CardTitle>
+                    <CardDescription>Upload a PDF file</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid gap-3">
+                      <Label htmlFor="pdf">Upload PDF</Label>
+                      <Input id="pdf" type="file" accept=".pdf" />
+                    </div>
+                  </CardContent>
+                </Card>
+              </TabsContent>
 
-            {/* IMAGE Content */}
-            <TabsContent value="img">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Jpeg., png., etc</CardTitle>
-                  <CardDescription>Upload an image</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid gap-3">
-                    <Label htmlFor="img">Upload Image</Label>
-                    <Input id="img" type="file" accept=".jpg" />
-                  </div>
-                </CardContent>
-              </Card>
-            </TabsContent>
+              {/* IMAGE Content */}
+              <TabsContent value="img">
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Jpeg., png., etc</CardTitle>
+                    <CardDescription>Upload an image</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid gap-3">
+                      <Label htmlFor="img">Upload Image</Label>
+                      <Input id="img" type="file" accept=".jpg" />
+                    </div>
+                  </CardContent>
+                </Card>
+              </TabsContent>
 
-            {/* Social Media Content */}
-            <TabsContent value="instagram">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Instagram</CardTitle>
-                  <CardDescription>Add your Instagram profile</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid gap-3">
-                    <Label htmlFor="instagram">Instagram URL</Label>
-                    <Input
-                      id="instagram"
-                      placeholder="https://instagram.com/username"
-                    />
-                  </div>
-                </CardContent>
-              </Card>
-            </TabsContent>
+              {/* Social Media Content */}
+              <TabsContent value="instagram">
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Instagram</CardTitle>
+                    <CardDescription>
+                      Add your Instagram profile
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid gap-3">
+                      <Label htmlFor="instagram">Instagram URL</Label>
+                      <Input
+                        id="instagram"
+                        placeholder="https://instagram.com/username"
+                      />
+                    </div>
+                  </CardContent>
+                </Card>
+              </TabsContent>
 
-            <TabsContent value="facebook">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Facebook</CardTitle>
-                  <CardDescription>Add your Facebook profile</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid gap-3">
-                    <Label htmlFor="facebook">Facebook URL</Label>
-                    <Input
-                      id="facebook"
-                      placeholder="https://facebook.com/username"
-                    />
-                  </div>
-                </CardContent>
-              </Card>
-            </TabsContent>
-            <TabsContent value="twitter">
-              <Card>
-                <CardHeader>
-                  <CardTitle>twitter</CardTitle>
-                  <CardDescription>Add your twitter profile</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid gap-3">
-                    <Label htmlFor="facebook">twitter URL</Label>
-                    <Input
-                      id="facebook"
-                      placeholder="https://facebook.com/username"
-                    />
-                  </div>
-                </CardContent>
-              </Card>
-            </TabsContent>
-            <TabsContent value="linkedin">
-              <Card>
-                <CardHeader>
-                  <CardTitle>linkedin</CardTitle>
-                  <CardDescription>Add your linkedin profile</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid gap-3">
-                    <Label htmlFor="facebook">linkedin URL</Label>
-                    <Input
-                      id="facebook"
-                      placeholder="https://facebook.com/username"
-                    />
-                  </div>
-                </CardContent>
-              </Card>
-            </TabsContent>
-            <TabsContent value="tiktok">
-              <Card>
-                <CardHeader>
-                  <CardTitle>tiktok</CardTitle>
-                  <CardDescription>Add your tiktok profile</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid gap-3">
-                    <Label htmlFor="facebook">tiktok URL</Label>
-                    <Input
-                      id="facebook"
-                      placeholder="https://facebook.com/username"
-                    />
-                  </div>
-                </CardContent>
-              </Card>
-            </TabsContent>
+              <TabsContent value="facebook">
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Facebook</CardTitle>
+                    <CardDescription>Add your Facebook profile</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid gap-3">
+                      <Label htmlFor="facebook">Facebook URL</Label>
+                      <Input
+                        id="facebook"
+                        placeholder="https://facebook.com/username"
+                      />
+                    </div>
+                  </CardContent>
+                </Card>
+              </TabsContent>
+              <TabsContent value="twitter">
+                <Card>
+                  <CardHeader>
+                    <CardTitle>twitter</CardTitle>
+                    <CardDescription>Add your twitter profile</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid gap-3">
+                      <Label htmlFor="facebook">twitter URL</Label>
+                      <Input
+                        id="facebook"
+                        placeholder="https://facebook.com/username"
+                      />
+                    </div>
+                  </CardContent>
+                </Card>
+              </TabsContent>
+              <TabsContent value="linkedin">
+                <Card>
+                  <CardHeader>
+                    <CardTitle>linkedin</CardTitle>
+                    <CardDescription>Add your linkedin profile</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid gap-3">
+                      <Label htmlFor="facebook">linkedin URL</Label>
+                      <Input
+                        id="facebook"
+                        placeholder="https://facebook.com/username"
+                      />
+                    </div>
+                  </CardContent>
+                </Card>
+              </TabsContent>
+              <TabsContent value="tiktok">
+                <Card>
+                  <CardHeader>
+                    <CardTitle>tiktok</CardTitle>
+                    <CardDescription>Add your tiktok profile</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid gap-3">
+                      <Label htmlFor="facebook">tiktok URL</Label>
+                      <Input
+                        id="facebook"
+                        placeholder="https://facebook.com/username"
+                      />
+                    </div>
+                  </CardContent>
+                </Card>
+              </TabsContent>
+            </div>
+            <QrOptions />
           </div>
-
           {/* QR-CODE */}
-          <div className="w-[300px] border">
-            <Qr />
-          </div>
+
+          <Qr />
         </div>
       </Tabs>
     </div>

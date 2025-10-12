@@ -83,7 +83,7 @@ export default function ClientQR() {
   };
 
   return (
-    <div className="">
+    <div className="w-[300px] border rounded-2xl">
       {/* <h2>Client QR code styling for Next.js</h2> */}
       <div ref={ref} />
       <div className="">
